@@ -2,14 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>DotNetSfs.Xml</AssemblyName>
+    <RootNamespace>DotNetSfs.Xml</RootNamespace>
     <PackageId>DotNetSfs.Xml</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
+    <Company>IMM Corp</Company>
     <Authors>Giancarlos Salas</Authors>
     <Title>.Net SFS Xml</Title>
     <Description>.Net Core SFS Xml</Description>
     <PackageProjectUrl>https://github.com/giansalex/DotNetSfs</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/giansalex/DotNetSfs</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags>sunat facturacion-electronica dotnetsfs</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\DotNetSfs.Xml.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
