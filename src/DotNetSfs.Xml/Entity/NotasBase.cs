@@ -39,7 +39,9 @@ namespace DotNetSfs.Xml.Entity
                     _seriedocumento = value.Trim();
                 }
                 else
+                {
                     throw new ArgumentException("La longitud del campo SerieDocumento es de un máximo de 4 caracteres, mínimo de 1 caracter");
+                }
             }
         }
 
@@ -52,9 +54,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (Validar(value, i => i <= 8))
+                {
                     _correlativodocumento = value.Trim();
+                }
                 else
+                {
                     throw new ArgumentException("La longitud del campo CorrelativoDocumento es de un máximo de 8 caracteres y mínimo de 1 caracter.");
+                }
             }
         }
 
@@ -67,9 +73,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (Validar(value, i => i == 3))
+                {
                     _codigomoneda = value.Trim();
+                }
                 else
+                {
                     throw new ArgumentException("El campo CodigoMoneda debe tener 3 caracteres.");
+                }
             }
         }
 
@@ -81,9 +91,13 @@ namespace DotNetSfs.Xml.Entity
             get { return _idDoc; }
             set {
                 if (Validar(value, i => i <= 13))
+                {
                     _idDoc = value;
+                }
                 else
+                {
                     throw new ArgumentException("La longitud del DocumentoRef no puede estar vacio, ni tener mas de 13 caracteres");
+                }
             }
         }
 
@@ -103,9 +117,13 @@ namespace DotNetSfs.Xml.Entity
             }
             set {
                 if (Validar(value, i => i <= 100))
+                {
                     _motivo = value;
+                }
                 else
+                {
                     throw new ArgumentException("La descripcion debe tener de 1 - 100 caracteres");
+                }
             }
         }
 
@@ -127,7 +145,9 @@ namespace DotNetSfs.Xml.Entity
                     _nroDocCliente = value.Trim();
                 }
                 else
+                {
                     throw new ArgumentException("El campo NroDocCliente no debe superar los 15 caracteres");
+                }
             }
         }
 
@@ -140,9 +160,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (Validar(value, i => i <= 100))
+                {
                     _razonsocialnombreapellidos = value.Trim();
+                }
                 else
+                {
                     throw new ArgumentException("El campo NombreRazonSocialCliente debe tener más de 1 caracter y un máximo de 100");
+                }
             }
         }
 
@@ -162,9 +186,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (value >= 0)
+                {
                     _descuentoGlobal = decimal.Round(value, 2);
+                }
                 else
+                {
                     throw new ArgumentException("El Descuento Global debe ser Mayor que 0.00");
+                }
             }
         }
 
@@ -177,9 +205,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if(value >= 0)
+                {
                     _totalCargos = decimal.Round(value, 2);
+                }
                 else
+                {
                     throw new ArgumentException("Total Cargos no puede ser menor a 0(cero)");
+                }
             }
         }
 
@@ -206,7 +238,9 @@ namespace DotNetSfs.Xml.Entity
                     _total = decimal.Round(value, 2);
                 }
                 else
+                {
                     throw new ArgumentException("El campo TotalVenta es obligatorio y debe ser mayor que 0.");
+                }
             }
         }
 
@@ -225,9 +259,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (Validar(value, i => i <= 30) && value.Contains("-"))
+                {
                     _documentorefseriecorrelativo = value.Trim();
+                }
                 else
+                {
                     throw new ArgumentException("El campo DocumentoReferenciaNumero debe estar separado con un '-' y debe tener más de 1 caracter y un máximo de 30");
+                }
             }
         }
 

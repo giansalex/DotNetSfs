@@ -26,10 +26,14 @@ namespace DotNetSfs.Xml.Entity.Misc
             set
             {
                 if (value >= 0)
+                {
                     //Se le redondea a un máximo de 2 decimales.
                     _precio = Math.Round(value, 2, MidpointRounding.AwayFromZero);
+                }
                 else
+                {
                     throw new ArgumentException("El campo Monto del Precio Item debe ser mayor igual a 0.");
+                }
             }
         }
     }

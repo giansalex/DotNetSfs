@@ -25,9 +25,13 @@ namespace DotNetSfs.Xml.Entity.Misc
             set
             {
                 if (!string.IsNullOrEmpty(value) && value.Length <= 13)
+                {
                     _serieNro = value;
+                }
                 else
+                {
                     throw new ArgumentException("El documento no puede ser vacio ni tener mas de 13 caracteres", nameof(Documento));
+                }
             }
         }
         /// <summary>

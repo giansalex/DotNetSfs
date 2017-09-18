@@ -34,7 +34,9 @@ namespace DotNetSfs.Xml.Entity.Details
                     _seriedocumento = value.Trim();
                 }
                 else
+                {
                     throw new ArgumentException("La longitud del campo SerieDocumento es de un máximo de 4 caracteres, mínimo de 1 caracter");
+                }
             }
         }
 
@@ -53,7 +55,9 @@ namespace DotNetSfs.Xml.Entity.Details
                     _correlativodocumento = value;
                 }
                 else
+                {
                     throw new ArgumentException("La longitud del campo CorrelativoDocumento es de un máximo de 8 caracteres y mínimo de 1 caracter.");
+                }
             }
         }
 
@@ -68,9 +72,13 @@ namespace DotNetSfs.Xml.Entity.Details
             set
             {
                 if (!string.IsNullOrWhiteSpace(value) && value.Length <= 100)
+                {
                     _reason = value.Trim();
+                }
                 else
+                {
                     throw new ArgumentException("El motivo de Baja es obligatorio y no mayor de 100 caracteres.");
+                }
             }
         }
     }

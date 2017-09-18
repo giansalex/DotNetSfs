@@ -24,9 +24,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (Validar(value, i => i == 3))
+                {
                     _codigomoneda = value;
+                }
                 else
+                {
                     throw new System.ArgumentException("El campo CodigoMoneda debe tener 3 caracteres.");
+                }
             }
         }
 
@@ -45,7 +49,9 @@ namespace DotNetSfs.Xml.Entity
                     _correlativoDoc = value.Trim();
                 }
                 else
+                {
                     throw new System.ArgumentException("El correlativo debe tener de 1 - 5 caracteres");
+                }
             }
         }
     }

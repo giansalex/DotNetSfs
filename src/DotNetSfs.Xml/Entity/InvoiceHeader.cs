@@ -22,7 +22,7 @@ namespace DotNetSfs.Xml.Entity
         private decimal _totalventa;
         private decimal _descuentoGlobal;
         #endregion
-
+        
         /// <summary>
         /// Tipo de comprobante que se está emitiendo.
         /// </summary>
@@ -53,8 +53,10 @@ namespace DotNetSfs.Xml.Entity
                     _seriedocumento = value.Trim();
                 }
                 else
+                {
 #line 54
                     throw new ArgumentException("La longitud del campo SerieDocumento es de un máximo de 4 caracteres, mínimo de 1 caracter");
+                }
             }
         }
 
@@ -69,9 +71,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (Validar(value, i => i <= 8))
+                {
                     _correlativodocumento = value.Trim();
+                }
                 else
+                {
                     throw new ArgumentException("La longitud del campo CorrelativoDocumento es de un máximo de 8 caracteres y mínimo de 1 caracter.");
+                }
             }
         }
 
@@ -86,9 +92,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (Validar(value, i => i <= 100))
+                {
                     _razonsocialnombreapellidos = value.Trim();
+                }
                 else
+                {
                     throw new ArgumentException("El campo NombreRazonSocialCliente debe tener más de 1 caracter y un máximo de 100");
+                }
             }
         }
 
@@ -107,7 +117,9 @@ namespace DotNetSfs.Xml.Entity
                     _nroDocCliente = value.Trim();
                 }
                 else
+                {
                     throw new ArgumentException("El campo NroDocCliente no debe superar los 15 caracteres");
+                }
             }
         }
 
@@ -122,9 +134,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (Validar(value, i => i == 3))
+                {
                     _codigomoneda = value.Trim();
+                }
                 else
+                {
                     throw new ArgumentException("El campo CodigoMoneda debe tener 3 caracteres.");
+                }
             }
         }
 
@@ -139,9 +155,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (Validar(value, i => i <= 30) && value.Contains("-"))
+                {
                     _documentorefseriecorrelativo = value.Trim();
+                }
                 else
+                {
                     throw new ArgumentException("El campo DocumentoReferenciaNumero debe estar separado con un '-' y debe tener más de 1 caracter y un máximo de 30");
+                }
             }
         }
 
@@ -156,9 +176,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (value > 0)
+                {
                     _descuentoGlobal = decimal.Round(value, 2);
+                }
                 else
+                {
                     throw new ArgumentException("El Descuento Global debe ser Mayor que 0.00");
+                }
             }
         }
 
@@ -177,7 +201,9 @@ namespace DotNetSfs.Xml.Entity
                     _totalventa = decimal.Round(value, 2);
                 }
                 else
+                {
                     throw new ArgumentException("El campo TotalVenta es obligatorio");
+                }
             }
         }
 

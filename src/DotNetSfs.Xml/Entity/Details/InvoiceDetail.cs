@@ -16,6 +16,7 @@ namespace DotNetSfs.Xml.Entity.Details
         private string _descripcionproducto;
         private decimal _preciounitario;
         private decimal _valorventaproducto;
+        private List<PrecioItemType> _precioAlternativos;
         #endregion
 
         /// <summary>
@@ -44,7 +45,9 @@ namespace DotNetSfs.Xml.Entity.Details
                     _unidadmedida = value.Trim();
                 }
                 else
+                {
                     throw new ArgumentException("El campo UnidadMedida debe tener como máximo 3 caracteres.");
+                }
             }
         }
 
@@ -64,7 +67,9 @@ namespace DotNetSfs.Xml.Entity.Details
                     _cantidad = Math.Round(value, 3, MidpointRounding.AwayFromZero);
                 }
                 else
+                {
                     throw new ArgumentException("El campo Cantidad debe ser mayor a 0.");
+                }
             }
         }
 
@@ -83,7 +88,9 @@ namespace DotNetSfs.Xml.Entity.Details
                     _descripcionproducto = value.Trim();
                 }
                 else
+                {
                     throw new ArgumentException("El campo DescripcionProducto debe tener como máximo 250 caracteres.");
+                }
             }
         }
 
@@ -104,7 +111,9 @@ namespace DotNetSfs.Xml.Entity.Details
                     _preciounitario = Math.Round(value, 2, MidpointRounding.AwayFromZero);
                 }
                 else
+                {
                     throw new ArgumentException("El campo PrecioUnitario debe ser positivo.");
+                }
             }
         }
 
@@ -124,14 +133,20 @@ namespace DotNetSfs.Xml.Entity.Details
                     _valorventaproducto = Math.Round(value, 2, MidpointRounding.AwayFromZero);
                 }
                 else
+                {
                     throw new ArgumentException("El campo ValorVenta debe ser positivo.");
+                }
             }
         }
 
         /// <summary>
         /// Indica el Tipo de Precio Unitario y/o Referencial del item.
         /// </summary>
-        public List<PrecioItemType> PrecioAlternativos;
+        public List<PrecioItemType> PrecioAlternativos
+        {
+            get { return _precioAlternativos;}
+            set { _precioAlternativos = value;}
+        }
 
         /// <summary>
         /// Codigo del Impuesto

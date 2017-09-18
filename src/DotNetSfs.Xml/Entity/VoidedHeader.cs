@@ -27,7 +27,9 @@ namespace DotNetSfs.Xml.Entity
                     _correlativoDoc = value.Trim();
                 }
                 else
+                {
                     throw new ArgumentException("El correlativo debe tener de 1 - 5 caracteres");
+                }
             }
         }
     }

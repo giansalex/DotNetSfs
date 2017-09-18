@@ -34,9 +34,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (Validar(value, i => i == 11))
+                {
                     _rucemisor = value.Trim();
+                }
                 else
+                {
                     throw new ArgumentException("El campo RucEmisor debe tener 11 caracteres.");
+                }
             }
         }
 
@@ -51,9 +55,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (Validar(value, i => i<= 100))
+                {
                     _razonsocialemisor = value.Trim();
+                }
                 else
+                {
                     throw new ArgumentException("El campo NombreRazonSocialEmisor debe tener más de 1 caracter y un máximo de 100");
+                }
             }
         }
 
@@ -68,9 +76,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (Validar(value, i => i <= 100))
+                {
                     _nombrecomercialemisor = value.Trim();
+                }
                 else
+                {
                     throw new ArgumentException("El campo NombreComercialEmisor debe tener más de 1 caracter y un máximo de 100");
+                }
             }
         }
 
@@ -85,9 +97,13 @@ namespace DotNetSfs.Xml.Entity
             set
             {
                 if (value.Date.Year == DateTime.Today.Year)
+                {
                     _fechaEmision = value;
+                }
                 else
+                {
                     throw new ArgumentException("El campo FechaEmision debe ser del año actual.");
+                }
             }
         }
 

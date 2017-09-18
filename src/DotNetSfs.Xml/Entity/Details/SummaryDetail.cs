@@ -38,7 +38,9 @@ namespace DotNetSfs.Xml.Entity.Details
                     _documento = value.Trim();
                 }
                 else
+                {
                     throw new ArgumentException("La longitud de Documento no puede estar vacio, ni tener más 13 caracteres");
+                }
             }
         }
 
@@ -57,7 +59,9 @@ namespace DotNetSfs.Xml.Entity.Details
                     _seriedocumento = value.Trim();
                 }
                 else
+                {
                     throw new ArgumentException("La longitud de SerieDocumento no puede estar vacio, ni tener mas 4 caracteres");
+                }
             }
         }
 
@@ -81,7 +85,9 @@ namespace DotNetSfs.Xml.Entity.Details
                     _nroDocCliente = value.Trim();
                 }
                 else
+                {
                     throw new ArgumentException("El campo NroDocCliente no debe superar los 20 caracteres");
+                }
             }
         }
 
@@ -110,7 +116,9 @@ namespace DotNetSfs.Xml.Entity.Details
                     _initDoc = value;
                 }
                 else
+                {
                     throw new ArgumentException("La longitud de NroCorrelativoInicial no puede estar vacio, ni tener mas de 8 caracteres");
+                }
             }
         }
 
@@ -125,9 +133,13 @@ namespace DotNetSfs.Xml.Entity.Details
             set
             {
                 if (!string.IsNullOrWhiteSpace(value) && value.Length <= 8)
+                {
                     _endDoc = value;
+                }
                 else
+                {
                     throw new ArgumentException("La longitud de NroCorrelativoFinal no puede estar vacio, ni tener mas de 8 caracteres");
+                }
             }
         }
 

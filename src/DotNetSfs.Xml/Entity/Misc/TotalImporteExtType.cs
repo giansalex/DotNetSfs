@@ -27,9 +27,13 @@ namespace DotNetSfs.Xml.Entity.Misc
             set
             {
                 if (value >= 0)
+                {
                     _monto = Decimal.Round(value, 2);
+                }
                 else
+                {
                     throw new ArgumentException("El campo Monto es obligatorio y debe ser mayor a 0");
+                }
             }
         }
     }

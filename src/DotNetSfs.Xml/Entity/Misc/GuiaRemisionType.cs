@@ -27,10 +27,14 @@ namespace DotNetSfs.Xml.Entity.Misc
                         _documentoguiaremisionseriecorrelativo = value.Trim();
                     }
                     else
+                    {
                         throw new ArgumentException("El campo NumeroGuiaRemision debe estar separado con un '-' y debe tener más de 1 caracter y un máximo de 30");
+                    }
                 }
                 else
+                {
                     _documentoguiaremisionseriecorrelativo = null;
+                }
             }
         }
 
@@ -52,11 +56,15 @@ namespace DotNetSfs.Xml.Entity.Misc
                         _documentoguiaremisiontipodocumento = idTipo.ToString("00");
                     }
                     else
+                    {
                         throw new ArgumentException(
                             "El campo IdTipoGuiaRemision debe ser numérico y con un máximo de 2 caracteres.");
+                    }
                 }
                 else
+                {
                     _documentoguiaremisiontipodocumento = null;
+                }
             }
         }
     }

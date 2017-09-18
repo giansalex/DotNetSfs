@@ -33,11 +33,12 @@ namespace DotNetSfs.Xml.Entity.Misc
             {
                 if (value >= 0)
                 {
-                    //Se le redondea a un máximo de 2 decimales.
                     _montopagable = Math.Round(value, 2, MidpointRounding.AwayFromZero);
                 }
                 else
+                {
                     throw new ArgumentException("El campo MontoPagable es obligatorio y no negativo");
+                }
             }
         }
 

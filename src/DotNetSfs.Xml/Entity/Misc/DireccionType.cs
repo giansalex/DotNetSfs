@@ -28,9 +28,13 @@ namespace DotNetSfs.Xml.Entity.Misc
             set
             {
                 if (!string.IsNullOrWhiteSpace(value) && value.Length == 6)
+                {
                     _ubigueo = value;
+                }
                 else
+                {
                     throw new ArgumentException("Codigo Ubigueo debe tener 6 caracteres");
+                }
             }
         }
         /// <summary>
@@ -43,9 +47,13 @@ namespace DotNetSfs.Xml.Entity.Misc
             get { return _direccion; }
             set {
                 if (!string.IsNullOrWhiteSpace(value) && value.Length <= 100)
-                    _direccion = value; 
+                {
+                    _direccion = value;
+                }
                 else
+                {
                     throw new ArgumentException("Direccion no puede estar vacio, ni tener mas de 100 caracteres");
+                }
             }
         }
         /// <summary>
@@ -69,9 +77,13 @@ namespace DotNetSfs.Xml.Entity.Misc
             set
             {
                 if (!string.IsNullOrWhiteSpace(value) && value.Length <= 30)
+                {
                     _dep = value;
+                }
                 else
+                {
                     throw new ArgumentException("Departamento no puede estar vacio, ni tener mas de 30 caracteres");
+                }
             }
         }
         /// <summary>
@@ -84,9 +96,13 @@ namespace DotNetSfs.Xml.Entity.Misc
             get { return _prov; }
             set {
                 if (!string.IsNullOrWhiteSpace(value) && value.Length <= 30)
+                {
                     _prov = value;
+                }
                 else
+                {
                     throw new ArgumentException("Provincia no puede estar vacio, ni tener mas de 30 caracteres");
+                }
             }
         }
         /// <summary>
@@ -99,9 +115,13 @@ namespace DotNetSfs.Xml.Entity.Misc
             get { return _distrito; }
             set {
                 if (!string.IsNullOrWhiteSpace(value) && value.Length <= 30)
+                {
                     _distrito = value;
+                }
                 else
+                {
                     throw new ArgumentException("Distrito no puede estar vacio, ni tener mas de 30 caracteres");
+                }
             }
         }
         /// <summary>
@@ -114,9 +134,13 @@ namespace DotNetSfs.Xml.Entity.Misc
             get { return _codPais; }
             set {
                 if (!string.IsNullOrWhiteSpace(value) && value.Length <= 2)
+                {
                     _codPais = value;
+                }
                 else
+                {
                     throw new ArgumentException("Codigo de Pais debe tener 2 caracteres");
+                }
             }
         }
         
