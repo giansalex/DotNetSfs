@@ -5,3 +5,5 @@ dotnet: 2.0.0
 script:
  - dotnet restore
  - dotnet build
+ - dotnet test ./test/DotNetSfs.Xml.Tests/DotNetSfs.Xml.Tests.csproj
+ - dotnet test ./test/DotNetSfs.Ws.Tests/DotNetSfs.Ws.Tests.csproj

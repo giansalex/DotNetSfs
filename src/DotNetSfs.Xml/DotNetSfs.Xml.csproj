@@ -5,7 +5,6 @@
     <AssemblyName>DotNetSfs.Xml</AssemblyName>
     <RootNamespace>DotNetSfs.Xml</RootNamespace>
     <PackageId>DotNetSfs.Xml</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
     <Company>IMM Corp</Company>
     <Authors>Giancarlos Salas</Authors>
     <Title>.Net SFS Xml</Title>
@@ -15,15 +14,17 @@
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags>sunat facturacion-electronica dotnetsfs</PackageTags>
+    <Version>1.0.1</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\DotNetSfs.Xml.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netcoreapp2.0\DotNetSfs.Xml.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Security.Cryptography.Xml" Version="4.4.0" />
-    <PackageReference Include="Ubl.V2.Pe" Version="1.0.0" />
+    <PackageReference Include="Ubl.V2.Pe" Version="1.0.1" />
   </ItemGroup>
 
 </Project>

@@ -44,15 +44,15 @@ namespace DotNetSfs.Ws.Res
         {
             using (var mem = new MemoryStream())
             {
-                using (var zip = new ZipArchive(mem))
+                using (var zip = new ZipArchive(mem, ZipArchiveMode.Create, false))
                 {
                     var entry = zip.CreateEntry(filename);
                     using (var stream = entry.Open())
                     {
                         stream.Write(content, 0, content.Length);
                     }
-                    return mem.ToArray();
                 }
+                return mem.ToArray();
             }
         }
     }

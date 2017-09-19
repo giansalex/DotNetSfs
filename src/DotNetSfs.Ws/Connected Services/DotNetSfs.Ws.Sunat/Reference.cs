@@ -12,31 +12,31 @@ namespace DotNetSfs.Ws.Sunat
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://service.gob.pe", ConfigurationName="billService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://service.sunat.gob.pe", ConfigurationName="DotNetSfs.Ws.Sunat.billService")]
     public interface billService
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:getStatus", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<getStatusResponse> getStatusAsync(getStatusRequest request);
+        System.Threading.Tasks.Task<DotNetSfs.Ws.Sunat.getStatusResponse> getStatusAsync(DotNetSfs.Ws.Sunat.getStatusRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:sendBill", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<sendBillResponse> sendBillAsync(sendBillRequest request);
+        System.Threading.Tasks.Task<DotNetSfs.Ws.Sunat.sendBillResponse> sendBillAsync(DotNetSfs.Ws.Sunat.sendBillRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:sendPack", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<sendPackResponse> sendPackAsync(sendPackRequest request);
+        System.Threading.Tasks.Task<DotNetSfs.Ws.Sunat.sendPackResponse> sendPackAsync(DotNetSfs.Ws.Sunat.sendPackRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:sendSummary", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<sendSummaryResponse> sendSummaryAsync(sendSummaryRequest request);
+        System.Threading.Tasks.Task<DotNetSfs.Ws.Sunat.sendSummaryResponse> sendSummaryAsync(DotNetSfs.Ws.Sunat.sendSummaryRequest request);
     }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://service.gob.pe")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://service.sunat.gob.pe")]
     public partial class statusResponse
     {
         
@@ -76,11 +76,11 @@ namespace DotNetSfs.Ws.Sunat
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getStatus", WrapperNamespace="http://service.gob.pe", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getStatus", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
     public partial class getStatusRequest
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string ticket;
         
@@ -97,19 +97,19 @@ namespace DotNetSfs.Ws.Sunat
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getStatusResponse", WrapperNamespace="http://service.gob.pe", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getStatusResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
     public partial class getStatusResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public statusResponse status;
+        public DotNetSfs.Ws.Sunat.statusResponse status;
         
         public getStatusResponse()
         {
         }
         
-        public getStatusResponse(statusResponse status)
+        public getStatusResponse(DotNetSfs.Ws.Sunat.statusResponse status)
         {
             this.status = status;
         }
@@ -118,19 +118,19 @@ namespace DotNetSfs.Ws.Sunat
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sendBill", WrapperNamespace="http://service.gob.pe", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendBill", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
     public partial class sendBillRequest
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string fileName;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=1)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
         public byte[] contentFile;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=2)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string partyType;
         
@@ -149,11 +149,11 @@ namespace DotNetSfs.Ws.Sunat
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sendBillResponse", WrapperNamespace="http://service.gob.pe", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendBillResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
     public partial class sendBillResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
         public byte[] applicationResponse;
         
@@ -170,19 +170,19 @@ namespace DotNetSfs.Ws.Sunat
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sendPack", WrapperNamespace="http://service.gob.pe", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendPack", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
     public partial class sendPackRequest
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string fileName;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=1)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
         public byte[] contentFile;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=2)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string partyType;
         
@@ -201,11 +201,11 @@ namespace DotNetSfs.Ws.Sunat
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sendPackResponse", WrapperNamespace="http://service.gob.pe", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendPackResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
     public partial class sendPackResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string ticket;
         
@@ -222,19 +222,19 @@ namespace DotNetSfs.Ws.Sunat
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sendSummary", WrapperNamespace="http://service.gob.pe", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendSummary", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
     public partial class sendSummaryRequest
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string fileName;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=1)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=1)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
         public byte[] contentFile;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=2)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=2)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string partyType;
         
@@ -253,11 +253,11 @@ namespace DotNetSfs.Ws.Sunat
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="sendSummaryResponse", WrapperNamespace="http://service.gob.pe", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="sendSummaryResponse", WrapperNamespace="http://service.sunat.gob.pe", IsWrapped=true)]
     public partial class sendSummaryResponse
     {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.gob.pe", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service.sunat.gob.pe", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string ticket;
         
@@ -272,13 +272,13 @@ namespace DotNetSfs.Ws.Sunat
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    public interface billServiceChannel : billService, System.ServiceModel.IClientChannel
+    public interface billServiceChannel : DotNetSfs.Ws.Sunat.billService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "0.5.0.0")]
-    public partial class billServiceClient : System.ServiceModel.ClientBase<billService>, billService
+    public partial class billServiceClient : System.ServiceModel.ClientBase<DotNetSfs.Ws.Sunat.billService>, DotNetSfs.Ws.Sunat.billService
     {
         
     /// <summary>
@@ -315,61 +315,61 @@ namespace DotNetSfs.Ws.Sunat
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<getStatusResponse> billService.getStatusAsync(getStatusRequest request)
+        System.Threading.Tasks.Task<DotNetSfs.Ws.Sunat.getStatusResponse> DotNetSfs.Ws.Sunat.billService.getStatusAsync(DotNetSfs.Ws.Sunat.getStatusRequest request)
         {
             return base.Channel.getStatusAsync(request);
         }
         
-        public System.Threading.Tasks.Task<getStatusResponse> getStatusAsync(string ticket)
+        public System.Threading.Tasks.Task<DotNetSfs.Ws.Sunat.getStatusResponse> getStatusAsync(string ticket)
         {
-            getStatusRequest inValue = new getStatusRequest();
+            DotNetSfs.Ws.Sunat.getStatusRequest inValue = new DotNetSfs.Ws.Sunat.getStatusRequest();
             inValue.ticket = ticket;
-            return ((billService)(this)).getStatusAsync(inValue);
+            return ((DotNetSfs.Ws.Sunat.billService)(this)).getStatusAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<sendBillResponse> billService.sendBillAsync(sendBillRequest request)
+        System.Threading.Tasks.Task<DotNetSfs.Ws.Sunat.sendBillResponse> DotNetSfs.Ws.Sunat.billService.sendBillAsync(DotNetSfs.Ws.Sunat.sendBillRequest request)
         {
             return base.Channel.sendBillAsync(request);
         }
         
-        public System.Threading.Tasks.Task<sendBillResponse> sendBillAsync(string fileName, byte[] contentFile, string partyType)
+        public System.Threading.Tasks.Task<DotNetSfs.Ws.Sunat.sendBillResponse> sendBillAsync(string fileName, byte[] contentFile, string partyType)
         {
-            sendBillRequest inValue = new sendBillRequest();
+            DotNetSfs.Ws.Sunat.sendBillRequest inValue = new DotNetSfs.Ws.Sunat.sendBillRequest();
             inValue.fileName = fileName;
             inValue.contentFile = contentFile;
             inValue.partyType = partyType;
-            return ((billService)(this)).sendBillAsync(inValue);
+            return ((DotNetSfs.Ws.Sunat.billService)(this)).sendBillAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<sendPackResponse> billService.sendPackAsync(sendPackRequest request)
+        System.Threading.Tasks.Task<DotNetSfs.Ws.Sunat.sendPackResponse> DotNetSfs.Ws.Sunat.billService.sendPackAsync(DotNetSfs.Ws.Sunat.sendPackRequest request)
         {
             return base.Channel.sendPackAsync(request);
         }
         
-        public System.Threading.Tasks.Task<sendPackResponse> sendPackAsync(string fileName, byte[] contentFile, string partyType)
+        public System.Threading.Tasks.Task<DotNetSfs.Ws.Sunat.sendPackResponse> sendPackAsync(string fileName, byte[] contentFile, string partyType)
         {
-            sendPackRequest inValue = new sendPackRequest();
+            DotNetSfs.Ws.Sunat.sendPackRequest inValue = new DotNetSfs.Ws.Sunat.sendPackRequest();
             inValue.fileName = fileName;
             inValue.contentFile = contentFile;
             inValue.partyType = partyType;
-            return ((billService)(this)).sendPackAsync(inValue);
+            return ((DotNetSfs.Ws.Sunat.billService)(this)).sendPackAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<sendSummaryResponse> billService.sendSummaryAsync(sendSummaryRequest request)
+        System.Threading.Tasks.Task<DotNetSfs.Ws.Sunat.sendSummaryResponse> DotNetSfs.Ws.Sunat.billService.sendSummaryAsync(DotNetSfs.Ws.Sunat.sendSummaryRequest request)
         {
             return base.Channel.sendSummaryAsync(request);
         }
         
-        public System.Threading.Tasks.Task<sendSummaryResponse> sendSummaryAsync(string fileName, byte[] contentFile, string partyType)
+        public System.Threading.Tasks.Task<DotNetSfs.Ws.Sunat.sendSummaryResponse> sendSummaryAsync(string fileName, byte[] contentFile, string partyType)
         {
-            sendSummaryRequest inValue = new sendSummaryRequest();
+            DotNetSfs.Ws.Sunat.sendSummaryRequest inValue = new DotNetSfs.Ws.Sunat.sendSummaryRequest();
             inValue.fileName = fileName;
             inValue.contentFile = contentFile;
             inValue.partyType = partyType;
-            return ((billService)(this)).sendSummaryAsync(inValue);
+            return ((DotNetSfs.Ws.Sunat.billService)(this)).sendSummaryAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -411,11 +411,11 @@ namespace DotNetSfs.Ws.Sunat
         {
             if ((endpointConfiguration == EndpointConfiguration.BillServicePort))
             {
-                return new System.ServiceModel.EndpointAddress("https://e-beta.gob.pe/ol-ti-itcpfegem-beta/billService");
+                return new System.ServiceModel.EndpointAddress("https://e-beta.sunat.gob.pe/ol-ti-itcpfegem-beta/billService");
             }
             if ((endpointConfiguration == EndpointConfiguration.BillServicePort1))
             {
-                return new System.ServiceModel.EndpointAddress("https://e-beta.gob.pe/ol-ti-itcpfegem-beta/billService");
+                return new System.ServiceModel.EndpointAddress("https://e-beta.sunat.gob.pe/ol-ti-itcpfegem-beta/billService");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

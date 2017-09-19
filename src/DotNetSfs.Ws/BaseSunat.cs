@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using DotNetSfs.Ws.Res;
@@ -65,12 +66,14 @@ namespace DotNetSfs.Ws
                 var result = await service.sendBillAsync(new sendBillRequest(nameOfFileZip, zipBytes, string.Empty));
 
                 using (var outputXml = ProcessZip.ExtractFile(result.applicationResponse))
+                {
                     response = new SunatResponse
                     {
                         Success = true,
                         ApplicationResponse = ProcessXml.GetAppResponse(outputXml),
                         ContentZip = result.applicationResponse
                     };
+                }
             }
             catch (FaultException ex)
             {
@@ -171,7 +174,7 @@ namespace DotNetSfs.Ws
 
         private static ErrorResponse GetErrorFromFault(FaultException ex)
         {
-            var errMsg = ProcessXml.GetDescriptionError(ex.Message);
+            var errMsg = ProcessXml.GetDescriptionError(ex.Code.Name);
             if (string.IsNullOrEmpty(errMsg))
             {
                 var msg = ex.CreateMessageFault();
@@ -183,7 +186,7 @@ namespace DotNetSfs.Ws
             }
             return new ErrorResponse
             {
-                Code = ex.Message,
+                Code = ex.Code.Name,
                 Description = errMsg
             };
         }

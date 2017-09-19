@@ -1,16 +1,4 @@
-﻿//
-// This example signs an XML file using an
-// envelope signature. It then verifies the 
-// signed XML.
-//
-// You must have a certificate with a subject name
-// of "CN=XMLDSIG_Test" in the "My" certificate store. 
-//
-// Run the following command to create a certificate
-// and place it in the store.
-// makecert -r -pe -n "CN=XMLDSIG_Test" -b 01/01/2005 -e 01/01/2010 -sky signing -ss my
-
-using System;
+﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Xml;
 using System.Xml;
@@ -56,7 +44,7 @@ namespace DotNetSfs.Xml
             xmlDigitalSignature.Prefix = "ds";
 
             if (signNodes.Count > 0)
-                signNodes[signNodes.Count - 1].AppendChild(doc.ImportNode(xmlDigitalSignature, true)); // Firma y agrega al doc XML
+                signNodes[signNodes.Count - 1].AppendChild(doc.ImportNode(xmlDigitalSignature, true));
             
             var xmlDeclaration = doc.CreateXmlDeclaration("1.0", "ISO-8859-1", "no");
             doc.ReplaceChild(xmlDeclaration, doc.FirstChild);
