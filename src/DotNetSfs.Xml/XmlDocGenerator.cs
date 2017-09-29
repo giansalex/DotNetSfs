@@ -64,7 +64,12 @@ namespace DotNetSfs.Xml
                                 {
                                     AdditionalInformation = new AdditionalInformationType{
                                         AdditionalMonetaryTotal = UtilsXmlDoc.DevuelveTributosAdicionales(invoiceHeaderEntity.TotalTributosAdicionales),
-                                        AdditionalProperty = invoiceHeaderEntity.InfoAddicional.ToArray()
+                                        AdditionalProperty = invoiceHeaderEntity.InfoAddicional.ToArray(),
+                                        SUNATEmbededDespatchAdvice = invoiceHeaderEntity.GuiaEmbebida,
+                                        SUNATTransaction = invoiceHeaderEntity.TipoOperacion.HasValue ? new SUNATTransactionType
+                                        {
+                                            ID = ((int)invoiceHeaderEntity.TipoOperacion).ToString("00")
+                                        }: null 
                                     }
                                 }
                         },
@@ -91,9 +96,11 @@ namespace DotNetSfs.Xml
                             }
                         },
                     },
+                    PrepaidPayment = UtilsXmlDoc.GetAnticipos(invoiceHeaderEntity.Anticipos),
                     LegalMonetaryTotal = new MonetaryTotalType
                     {
                         AllowanceTotalAmount = invoiceHeaderEntity.DescuentoGlobal > 0 ? new AmountType {Value = invoiceHeaderEntity.DescuentoGlobal} : null,
+                        PrepaidAmount = invoiceHeaderEntity.TotalAnticipos.HasValue ? new AmountType {Value = invoiceHeaderEntity.TotalAnticipos.Value } : null,
                         PayableAmount = invoiceHeaderEntity.TotalVenta
                     },
                     InvoiceLine = UtilsXmlDoc.DevuelveDetallesDelComprobante(invoiceHeaderEntity.DetallesDocumento),

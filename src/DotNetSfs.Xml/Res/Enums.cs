@@ -410,4 +410,82 @@ namespace FacturacionElectronica.GeneradorXml.Enums
         /// </summary>
         AnuladoDia
     }
+
+    /// <summary>
+    /// Enum TipoOperacion
+    /// </summary>
+    public enum TipoOperacion
+    {
+        /// <summary>
+        /// The venta interna
+        /// </summary>
+        VentaInterna = 1,
+        /// <summary>
+        /// The exportacion
+        /// </summary>
+        Exportacion = 2,
+        /// <summary>
+        /// The no domiciliados
+        /// </summary>
+        NoDomiciliados = 3,
+        /// <summary>
+        /// The venta interna - anticipos
+        /// </summary>
+        VentaInternaAnticipos = 4,
+        /// <summary>
+        /// The venta itinerante
+        /// </summary>
+        VentaItinerante = 5,
+        /// <summary>
+        /// The factura guia
+        /// </summary>
+        FacturaGuia = 6,
+        /// <summary>
+        /// The venta arroz pilado
+        /// </summary>
+        VentaArrozPilado = 7,
+        /// <summary>
+        /// The factura Comprobante de percepcion
+        /// </summary>
+        FacturaCompDePercepcion = 8,
+        /// <summary>
+        /// The factura guia remitente
+        /// </summary>
+        FacturaGuiaRemitente = 10,
+        /// <summary>
+        /// The factura guia transportista
+        /// </summary>
+        FacturaGuiaTransportista = 11
+    }
+    
+    /// <summary>
+    /// Catalog: 12, Documentos Relacionados Tributarios.
+    /// </summary>
+    public enum DocRelTributario
+    {
+        /// <summary>
+        /// Ticket de salida - ENAPU.
+        /// </summary>
+        TicketSalida = 4,
+        /// <summary>
+        /// Codigo SCOP.
+        /// </summary>
+        CodigoScop = 5,
+        /// <summary>
+        /// Otros.
+        /// </summary>
+        Otros = 99,
+        /// <summary>
+        /// Factura - emitida para corregir error en el RUC.
+        /// </summary>
+        FacturaCorregirRuc = 1,
+        /// <summary>
+        /// Factura - emitida por anticipos.
+        /// </summary>
+        FacturaAnticipos = 2,
+        /// <summary>
+        /// Boleta de Venta - emitida por anticipos.
+        /// </summary>
+        BoletaAnticipos = 3,
+    }
 }

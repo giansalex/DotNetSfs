@@ -15,6 +15,11 @@ namespace DotNetSfs.Xml.Res
 {
     internal static class UtilsXmlDoc
     {
+        /// <summary>
+        /// The ruc identifier document
+        /// </summary>
+        public const string RucIdDocument = "6";
+
         #region General
         /// <summary>
         /// Genera y Firma un Doc XML
@@ -331,6 +336,37 @@ namespace DotNetSfs.Xml.Res
                     }
                 }
             }).ToArray();
+        }
+
+
+        /// <summary>
+        /// Gets the anticipos.
+        /// </summary>
+        /// <param name="anticipos">The anticipos.</param>
+        /// <returns>Gs.Ubl.v2.Cac.PaymentType[].</returns>
+        public static PaymentType[] GetAnticipos(List<AnticipoType> anticipos)
+        {
+            if (anticipos == null || anticipos.Count == 0)
+            {
+                return null;
+            }
+
+            var elements = anticipos.Select(item => new PaymentType
+            {
+                ID = new IdentifierType
+                {
+                    schemeID = ((int)item.TipoDocRel).ToString("00"),
+                    Value = item.NroDocumentRel
+                },
+                PaidAmount = item.MontoAnticipo,
+                InstructionID = new IdentifierType
+                {
+                    schemeID = RucIdDocument,
+                    Value = item.RucEmisorDoc
+                }
+            });
+
+            return elements.ToArray();
         }
 
         /// <summary>
