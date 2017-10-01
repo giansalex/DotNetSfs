@@ -27,13 +27,18 @@ namespace DotNetSfs.Ws.Res
             string resp = null;
             try
             {
+                code = System.Text.RegularExpressions.Regex.Replace(code, @"[^\d]", "");
+                if (!int.TryParse(code, out var val))
+                {
+                    return string.Empty;
+                }
+                code = val.ToString();
                 using (TextReader reader= new StringReader(Resources.ListaDeErrores))
                 {
-                    code = System.Text.RegularExpressions.Regex.Replace(code, @"[^\d]", "");
                     var errors = XElement.Load(reader);
                     var filter = (from x in errors.Elements()
                         let o = x.Attribute("code")
-                        where o != null && o.Value.Equals(int.Parse(code).ToString())
+                        where o != null && o.Value.Equals(code)
                                   select x.Value).ToList();
                     if (filter.Any())
                         resp = filter.FirstOrDefault();
