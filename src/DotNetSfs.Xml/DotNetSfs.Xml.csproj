@@ -1,23 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>DotNetSfs.Xml</AssemblyName>
     <RootNamespace>DotNetSfs.Xml</RootNamespace>
     <PackageId>DotNetSfs.Xml</PackageId>
     <Company>IMM Corp</Company>
     <Authors>Giancarlos Salas</Authors>
     <Title>.Net SFS Xml</Title>
-    <Description>.Net Core SFS Xml</Description>
+    <Description>.Net Cross Platform SFS Xml</Description>
     <PackageProjectUrl>https://github.com/giansalex/DotNetSfs</PackageProjectUrl>
     <RepositoryUrl>https://github.com/giansalex/DotNetSfs</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags>sunat facturacion-electronica dotnetsfs</PackageTags>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netcoreapp2.0\DotNetSfs.Xml.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard2.0\DotNetSfs.Xml.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Security.Cryptography.Xml" Version="4.4.0" />

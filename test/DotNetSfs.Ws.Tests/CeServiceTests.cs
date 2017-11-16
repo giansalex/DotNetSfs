@@ -46,7 +46,7 @@ namespace DotNetSfs.Ws.Tests
             
             Assert.True(result.Success);
             Assert.NotNull(result.ApplicationResponse);
-            Assert.Contains("aceptada", result.ApplicationResponse.Descripcion);
+            Assert.Contains("aceptado", result.ApplicationResponse.Descripcion);
             _output.WriteLine(result.ApplicationResponse.Descripcion);
         }
     }

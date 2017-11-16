@@ -1,25 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>DotNetSfs.Ws</AssemblyName>
     <RootNamespace>DotNetSfs.Ws</RootNamespace>
     <PackageId>DotNetSfs.Ws</PackageId>
     <Company>IMM Corp</Company>
     <Authors>Giancarlos Salas</Authors>
     <Title>.Net SFS WebService</Title>
-    <Description>.Net Core SFS WebService</Description>
+    <Description>.Net Cross Platform SFS WebService</Description>
     <PackageProjectUrl>https://github.com/giansalex/DotNetSfs</PackageProjectUrl>
     <RepositoryUrl>https://github.com/giansalex/DotNetSfs</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags>sunat facturacion-electronica dotnetsfs</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netcoreapp2.0\DotNetSfs.Ws.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard2.0\DotNetSfs.Ws.xml</DocumentationFile>
   </PropertyGroup>
   
   <ItemGroup>
