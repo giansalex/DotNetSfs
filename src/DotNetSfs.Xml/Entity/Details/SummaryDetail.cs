@@ -16,6 +16,7 @@ namespace DotNetSfs.Xml.Entity.Details
         private string _seriedocumento;
         private string _initDoc;
         private string _endDoc;
+        private decimal _total;
         #endregion
 
         /// <summary>
@@ -30,7 +31,7 @@ namespace DotNetSfs.Xml.Entity.Details
         /// <exception cref="ArgumentException">La longitud de Documento no puede estar vacio, ni tener más 13 caracteres</exception>
         public string Documento
         {
-            get { return _documento; }
+            get => _documento;
             set
             {
                 if (!string.IsNullOrWhiteSpace(value) && value.Trim().Length <= 13)
@@ -77,7 +78,7 @@ namespace DotNetSfs.Xml.Entity.Details
         /// <exception cref="System.ArgumentException">El campo NroDocCliente no debe superar los 15 caracteres</exception>
         public string NroDocCliente
         {
-            get { return _nroDocCliente; }
+            get => _nroDocCliente;
             set
             {
                 if (!string.IsNullOrWhiteSpace(value) && value.Trim().Length <= 20)
@@ -109,7 +110,7 @@ namespace DotNetSfs.Xml.Entity.Details
         /// <exception cref="System.ArgumentException">La longitud de NroCorrelativoInicial no puede estar vacio, ni tener mas de 8 caracteres</exception>
         public string NroCorrelativoInicial
         {
-            get { return _initDoc; }
+            get => _initDoc;
             set {
                 if (!string.IsNullOrWhiteSpace(value) && value.Length <= 8)
                 {
@@ -129,7 +130,7 @@ namespace DotNetSfs.Xml.Entity.Details
         /// <exception cref="System.ArgumentException">La longitud de NroCorrelativoFinal no puede estar vacio, ni tener mas de 8 caracteres</exception>
         public string NroCorrelativoFinal
         {
-            get { return _endDoc; }
+            get => _endDoc;
             set
             {
                 if (!string.IsNullOrWhiteSpace(value) && value.Length <= 8)
@@ -157,5 +158,15 @@ namespace DotNetSfs.Xml.Entity.Details
         /// Muestra la información relacionada con los impuestos.
         /// </summary>
         public List<TotalImpuestosType> Impuesto;
+
+        ///<summary>
+        /// Gets or sets the total.
+        /// </summary>
+        /// <value>The total.</value>
+        public decimal Total
+        {
+            get => _total;
+            set => _total = decimal.Round(value, 2, MidpointRounding.AwayFromZero);
+        }
     }
 }

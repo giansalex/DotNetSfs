@@ -163,8 +163,9 @@ namespace DotNetSfs.Xml
         /// Genera un documento XML para Resumen Diario.
         /// </summary>
         /// <param name="summaryHeaderEntity">Entidad de Resumen</param>
+        /// <param name="version2">Es version 2</param>
         /// <returns>Retorna el XML generado.</returns>
-        public XmlFileResult GenerarDocumentoSummary(SummaryHeader summaryHeaderEntity)
+        public XmlFileResult GenerarDocumentoSummary(SummaryHeader summaryHeaderEntity, bool version2 = false)
         {
             try
             {
@@ -178,7 +179,7 @@ namespace DotNetSfs.Xml
                 var summaryDoc = new SummaryDocumentsType
                 {
                     ID = id,
-                    CustomizationID = "1.1", // 2017 = 1.1
+                    CustomizationID = version2 ? "1.1" : "1.0",
                     ReferenceDate = summaryHeaderEntity.FechaEmision,
                     IssueDate = DateTime.Today.Date,
                     UBLExtensions = new[]

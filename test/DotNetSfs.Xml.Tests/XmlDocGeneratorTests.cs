@@ -182,5 +182,229 @@ namespace DotNetSfs.Xml.Tests
             Assert.NotNull(res.Content);
             Assert.True(res.Content.Length > 0);
         }
+
+        [Fact]
+        public void GenerateSummaryTest()
+        {
+            var summary = new SummaryHeader
+            {
+                TipoDocumentoIdentidadEmisor = TipoDocumentoIdentidad.RegistroUnicoContribuyentes,
+                RucEmisor = "20600995805",
+                FechaEmision = DateTime.Now.Date,
+                NombreRazonSocialEmisor = "ABLIMATEX EXPORT SAC",
+                NombreComercialEmisor = "C-ABLIMATEX EXPORT SAC",
+                CorrelativoArchivo = "01",
+                CodigoMoneda = "PEN",
+                DetallesDocumento = new List<SummaryDetail>
+                {
+                    new SummaryDetail{
+                        TipoDocumento = TipoDocumentoElectronico.Boleta,
+                        SerieDocumento = "BA98",
+                        NroCorrelativoInicial = "456",
+                        NroCorrelativoFinal = "764",
+                        Total = 100,
+                        Importe = new List<TotalImporteType>
+                        {
+                            new TotalImporteType
+                            {
+                                TipoImporte = TipoValorVenta.Gravado,
+                                Monto = 98232.00M,
+                            },
+                            new TotalImporteType
+                            {
+                                TipoImporte = TipoValorVenta.Exonerado,
+                                Monto = 20,
+                            },
+                            new TotalImporteType
+                            {
+                                TipoImporte = TipoValorVenta.Inafecto,
+                                Monto = 232,
+                            }
+                        },
+                        OtroImporte = new List<TotalImporteExtType>
+                        {
+                            new TotalImporteExtType
+                            {
+                                Indicador = true,
+                                Monto = 5,
+                            }
+                        },
+                        Impuesto = new List<TotalImpuestosType>
+                        {
+                            new TotalImpuestosType
+                            {
+                                Monto = 17681.76M,
+                                TipoTributo = TipoTributo.IGV_VAT
+                            },
+                            new TotalImpuestosType
+                            {
+                                Monto = 1200,
+                                TipoTributo = TipoTributo.ISC_EXC
+                            }
+                        }
+                    },
+                    new SummaryDetail{
+                        TipoDocumento = TipoDocumentoElectronico.Boleta,
+                        SerieDocumento = "BC23",
+                        NroCorrelativoInicial = "789",
+                        NroCorrelativoFinal = "932",
+                        Total = 200,
+                        Importe = new List<TotalImporteType>
+                        {
+                            new TotalImporteType
+                            {
+                                TipoImporte = TipoValorVenta.Gravado,
+                                Monto = 78223,
+                            },
+                            new TotalImporteType
+                            {
+                                TipoImporte = TipoValorVenta.Exonerado,
+                                Monto = 24423,
+                            },
+                            new TotalImporteType
+                            {
+                                TipoImporte = TipoValorVenta.Inafecto,
+                                Monto = 45,
+                            }
+                        },
+                        OtroImporte = new List<TotalImporteExtType>(),
+                        Impuesto = new List<TotalImpuestosType>
+                        {
+                            new TotalImpuestosType
+                            {
+                                Monto = 14080.14M,
+                                TipoTributo = TipoTributo.IGV_VAT
+                            },
+                            new TotalImpuestosType
+                            {
+                                Monto = 0,
+                                TipoTributo = TipoTributo.ISC_EXC
+                            }
+                        }
+                    }
+                }
+            };
+
+            var res = _generator.GenerarDocumentoSummary(summary);
+            if (!res.Success)
+                _output.WriteLine(res.Error);
+
+            Assert.True(res.Success);
+            Assert.NotNull(res.Content);
+            Assert.True(res.Content.Length > 0);
+        }
+
+        [Fact]
+        public void GenerateSummaryV2Test()
+        {
+            var summary = new SummaryHeader
+            {
+                TipoDocumentoIdentidadEmisor = TipoDocumentoIdentidad.RegistroUnicoContribuyentes,
+                RucEmisor = "20600995805",
+                FechaEmision = DateTime.Now.Date,
+                NombreRazonSocialEmisor = "ABLIMATEX EXPORT SAC",
+                NombreComercialEmisor = "C-ABLIMATEX EXPORT SAC",
+                CorrelativoArchivo = "01",
+                CodigoMoneda = "PEN",
+                DetallesDocumento = new List<SummaryDetail>
+                {
+                    new SummaryDetail{
+                        TipoDocumento = TipoDocumentoElectronico.Boleta,
+                        Documento = "B001-1",
+                        TipoDocumentoIdentidadCliente = TipoDocumentoIdentidad.DocumentoNacionalIdentidad,
+                        NroDocCliente = "99887766",
+                        Estado = EstadoResumen.Adicionar,
+                        Total = 100.422M,
+                        Importe = new List<TotalImporteType>
+                        {
+                            new TotalImporteType
+                            {
+                                TipoImporte = TipoValorVenta.Gravado,
+                                Monto = 98232.00M,
+                            },
+                            new TotalImporteType
+                            {
+                                TipoImporte = TipoValorVenta.Exonerado,
+                                Monto = 20,
+                            },
+                            new TotalImporteType
+                            {
+                                TipoImporte = TipoValorVenta.Inafecto,
+                                Monto = 232,
+                            }
+                        },
+                        OtroImporte = new List<TotalImporteExtType>
+                        {
+                            new TotalImporteExtType
+                            {
+                                Indicador = true,
+                                Monto = 5,
+                            }
+                        },
+                        Impuesto = new List<TotalImpuestosType>
+                        {
+                            new TotalImpuestosType
+                            {
+                                Monto = 17681.76M,
+                                TipoTributo = TipoTributo.IGV_VAT
+                            },
+                            new TotalImpuestosType
+                            {
+                                Monto = 1200,
+                                TipoTributo = TipoTributo.ISC_EXC
+                            }
+                        }
+                    },
+                    new SummaryDetail{
+                        TipoDocumento = TipoDocumentoElectronico.Boleta,
+                        Documento = "B001-00000001",
+                        TipoDocumentoIdentidadCliente = TipoDocumentoIdentidad.DocumentoNacionalIdentidad,
+                        Estado = EstadoResumen.Anulado,
+                        NroDocCliente = "55443322",
+                        Total = 200,
+                        Importe = new List<TotalImporteType>
+                        {
+                            new TotalImporteType
+                            {
+                                TipoImporte = TipoValorVenta.Gravado,
+                                Monto = 78223,
+                            },
+                            new TotalImporteType
+                            {
+                                TipoImporte = TipoValorVenta.Exonerado,
+                                Monto = 24423,
+                            },
+                            new TotalImporteType
+                            {
+                                TipoImporte = TipoValorVenta.Inafecto,
+                                Monto = 45,
+                            }
+                        },
+                        OtroImporte = new List<TotalImporteExtType>(),
+                        Impuesto = new List<TotalImpuestosType>
+                        {
+                            new TotalImpuestosType
+                            {
+                                Monto = 14080.14M,
+                                TipoTributo = TipoTributo.IGV_VAT
+                            },
+                            new TotalImpuestosType
+                            {
+                                Monto = 0,
+                                TipoTributo = TipoTributo.ISC_EXC
+                            }
+                        }
+                    }
+                }
+            };
+
+            var res = _generator.GenerarDocumentoSummary(summary, true);
+            if (!res.Success)
+                _output.WriteLine(res.Error);
+
+            Assert.True(res.Success);
+            Assert.NotNull(res.Content);
+            Assert.True(res.Content.Length > 0);
+        }
     }
 }
