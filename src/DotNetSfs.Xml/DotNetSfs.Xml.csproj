@@ -20,7 +20,7 @@
     <DocumentationFile>bin\Release\netstandard2.0\DotNetSfs.Xml.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="4.4.0" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="4.5.0" />
     <PackageReference Include="Ubl.V2.Pe" Version="1.0.2" />
   </ItemGroup>
 </Project>
